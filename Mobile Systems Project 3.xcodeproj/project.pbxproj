@@ -15,6 +15,9 @@
 		4E3EB137247EF5A7009F27A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E3EB135247EF5A7009F27A9 /* LaunchScreen.storyboard */; };
 		4E3EB142247EF5A7009F27A9 /* Mobile_Systems_Project_3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3EB141247EF5A7009F27A9 /* Mobile_Systems_Project_3Tests.swift */; };
 		4E3EB14D247EF5A8009F27A9 /* Mobile_Systems_Project_3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3EB14C247EF5A8009F27A9 /* Mobile_Systems_Project_3UITests.swift */; };
+		4E59AA9F2485E3A900D6D63F /* FFTManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E59AA9E2485E3A900D6D63F /* FFTManager.swift */; };
+		4ED7DE9C24856F9500E3187C /* FrameExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED7DE9B24856F9500E3187C /* FrameExtractor.swift */; };
+		4ED7DE9E248573B400E3187C /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED7DE9D248573B400E3187C /* CameraManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		4E3EB148247EF5A8009F27A9 /* Mobile Systems Project 3UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mobile Systems Project 3UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E3EB14C247EF5A8009F27A9 /* Mobile_Systems_Project_3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mobile_Systems_Project_3UITests.swift; sourceTree = "<group>"; };
 		4E3EB14E247EF5A8009F27A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E59AA9E2485E3A900D6D63F /* FFTManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFTManager.swift; sourceTree = "<group>"; };
+		4ED7DE9B24856F9500E3187C /* FrameExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameExtractor.swift; sourceTree = "<group>"; };
+		4ED7DE9D248573B400E3187C /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +112,9 @@
 				4E3EB135247EF5A7009F27A9 /* LaunchScreen.storyboard */,
 				4E3EB138247EF5A7009F27A9 /* Info.plist */,
 				4E3EB132247EF5A7009F27A9 /* Preview Content */,
+				4ED7DE9B24856F9500E3187C /* FrameExtractor.swift */,
+				4E59AA9E2485E3A900D6D63F /* FFTManager.swift */,
+				4ED7DE9D248573B400E3187C /* CameraManager.swift */,
 			);
 			path = "Mobile Systems Project 3";
 			sourceTree = "<group>";
@@ -267,9 +276,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E59AA9F2485E3A900D6D63F /* FFTManager.swift in Sources */,
 				4E3EB12B247EF5A2009F27A9 /* AppDelegate.swift in Sources */,
 				4E3EB12D247EF5A2009F27A9 /* SceneDelegate.swift in Sources */,
 				4E3EB12F247EF5A2009F27A9 /* ContentView.swift in Sources */,
+				4ED7DE9E248573B400E3187C /* CameraManager.swift in Sources */,
+				4ED7DE9C24856F9500E3187C /* FrameExtractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

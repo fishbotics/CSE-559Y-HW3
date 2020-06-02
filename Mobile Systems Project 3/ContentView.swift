@@ -9,13 +9,32 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var cameraManager: CameraManager
+
     var body: some View {
-        Text("Hello, World!")
+        VStack {
+            Text("Adam's CSE 599Y Screen-screen communication")
+                .font(.title)
+                .foregroundColor(Color.white)
+            Text("\(self.cameraManager.bitString)")
+                .foregroundColor(Color.green)
+            Button(action: {
+                self.cameraManager.toggle_capture()
+            }) {
+                if cameraManager.capturing {
+                    Text("Stop capture")
+                } else {
+                    Text("Capture")
+                }
+            }
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+        .environmentObject(CameraManager())
+
     }
 }
