@@ -34,14 +34,26 @@ def zero(base, foreground, dimness):
         base.copy(),
         base.copy(),
         img.copy(),
-        base.copy(),
-        base.copy(),
         img.copy(),
         base.copy(),
         base.copy(),
         img.copy(),
+        img.copy(),
         base.copy(),
         base.copy(),
+        img.copy(),
+        img.copy(),
+        base.copy(),
+        base.copy(),
+        img.copy(),
+        img.copy(),
+        base.copy(),
+        base.copy(),
+        img.copy(),
+        img.copy(),
+        base.copy(),
+        base.copy(),
+        img.copy(),
         img.copy(),
     ]
 
@@ -55,6 +67,18 @@ def one(base, foreground, dimness):
     )
     img = Image.composite(foreground, base, mask_img)
     return [
+        base.copy(),
+        img.copy(),
+        base.copy(),
+        img.copy(),
+        base.copy(),
+        img.copy(),
+        base.copy(),
+        img.copy(),
+        base.copy(),
+        img.copy(),
+        base.copy(),
+        img.copy(),
         base.copy(),
         img.copy(),
         base.copy(),
@@ -87,7 +111,7 @@ def run(bit_string, alpha_level=0.1, framerate=30):
             images.extend(one(base, foreground, dimness))
 
     fourcc = cv2.VideoWriter_fourcc(*'avc1')
-    video = cv2.VideoWriter(f"{input_string}_{bit_string}.mp4", fourcc, framerate, (base.width, base.height))
+    video = cv2.VideoWriter(f"{bit_string}_{alpha_level}_{framerate}.mp4", fourcc, framerate, (base.width, base.height))
     for img in images:
         video.write(cv2.cvtColor(np.array(img), cv2.COLOR_RGB2BGR))
     video.release()
@@ -99,4 +123,4 @@ if __name__ == '__main__':
     parser.add_argument('--alpha', type=float, default=0.05)
     parser.add_argument('--framerate', type=int, default=60)
     args = parser.parse_args()
-    run(args.input_string, args.bit_string, args.alpha, args.framerate)
+    run(args.bit_string, args.alpha, args.framerate)

@@ -15,7 +15,7 @@ class CameraManager: ObservableObject, FrameExtractorDelegate {
     var fftManager: FFTManager
     var intensityBuffer: [Float] = []
     var calibrated = false
-    let bufferLength: UInt = 12
+    let bufferLength: UInt = 24
     let useFFT = true
     let onePattern: [Int]  = [[Int]](repeating: [0, 1], count: 6).flatMap{$0}
     let zeroPattern: [Int]  = [[Int]](repeating: [0, 0, 1], count: 4).flatMap{$0}
@@ -24,7 +24,7 @@ class CameraManager: ObservableObject, FrameExtractorDelegate {
     
     init() {
         frameExtractor = FrameExtractor()
-        fftManager = FFTManager(bufferLength: self.bufferLength)
+        fftManager = FFTManager()
         frameExtractor.delegate = self
     }
     
@@ -35,16 +35,14 @@ class CameraManager: ObservableObject, FrameExtractorDelegate {
             if intensityBuffer.count == bufferLength {
                 if useFFT {
                     var best_f = fftManager.fft(buffer: self.intensityBuffer)
-                    // best_f that is [0] actually corresponds to the 1 bit
-                    // best_f that is [2] corresponds to 0
-                    if best_f == 0 {
+                    if best_f == 1 {
                         if !calibrated {
                             calibrated.toggle()
                         }
                         gotOne()
                     }
                     if calibrated {
-                        if best_f == 2 {
+                        if best_f == 0 {
                         gotZero()
                         }
                         self.intensityBuffer = []
@@ -96,6 +94,7 @@ class CameraManager: ObservableObject, FrameExtractorDelegate {
         }
         // Required float to use the FFT
         intensityBuffer.append(Float(intensity))
+        print(intensityBuffer.count)
     }
     
     func toggle_capture() {
