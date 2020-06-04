@@ -30,7 +30,6 @@ class CameraManager: ObservableObject, FrameExtractorDelegate {
     
     func captured(intensity: Double) {
         if capturing {
-            // print("Intensity: \(intensity)")
             pushToBuffer(intensity: intensity)
             if intensityBuffer.count == bufferLength {
                 if useFFT {
@@ -94,7 +93,6 @@ class CameraManager: ObservableObject, FrameExtractorDelegate {
         }
         // Required float to use the FFT
         intensityBuffer.append(Float(intensity))
-        print(intensityBuffer.count)
     }
     
     func toggle_capture() {
